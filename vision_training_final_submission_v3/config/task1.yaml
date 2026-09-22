@@ -1,0 +1,21 @@
+# Task 1 configuration record
+filter:
+  mean_kernel: 5
+gaussian:
+  kernel: 5
+  sigma: 1.5
+median:
+  kernel: 5
+red_hsv:
+  lower_1: [0, 100, 100]
+  upper_1: [10, 255, 255]
+  lower_2: [170, 100, 100]
+  upper_2: [179, 255, 255]
+morphology:
+  kernel: 5
+contour:
+  min_area_px2: 500
+  min_aspect_ratio: 0.2
+  max_aspect_ratio: 5.0
+rotation_deg: 35
+crop: top_left_quarter

@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.16)
+project(vision_training_all LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+find_package(OpenCV REQUIRED)
+find_package(Eigen3 REQUIRED NO_MODULE)
+
+add_executable(task1_image src/task1_image/main.cpp)
+target_include_directories(task1_image PRIVATE ${OpenCV_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(task1_image PRIVATE ${OpenCV_LIBS})
+
+add_executable(task2_fit src/task2_fit/main.cpp)
+target_include_directories(task2_fit PRIVATE ${OpenCV_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(task2_fit PRIVATE ${OpenCV_LIBS} Eigen3::Eigen)
+
+add_executable(task3_tracker src/task3_windmill/task3_tracker.cpp)
+target_include_directories(task3_tracker PRIVATE ${OpenCV_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(task3_tracker PRIVATE ${OpenCV_LIBS})
+
+message(STATUS "Unified project: task1_image, task2_fit, task3_tracker")

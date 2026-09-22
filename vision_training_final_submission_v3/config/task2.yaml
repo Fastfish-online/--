@@ -1,0 +1,20 @@
+# Task 2 configuration record
+input:
+  expected_fps: 30
+  actual_size: [682, 512]
+  actual_frames: 720
+model:
+  angular_velocity: "b + A * sin(Omega * t + phi)"
+  theta: "theta0 + b*t + (A/Omega)*(cos(phi)-cos(Omega*t+phi))"
+constraints:
+  A_positive: true
+  b_greater_than_A: true
+  Omega_positive: true
+fit_result:
+  theta0_rad: 0.350113
+  b_rad_s: 1.350008
+  A_rad_s: 0.550110
+  Omega_rad_s: 1.650018
+  phi_rad: 0.701248
+  angle_rmse_rad: 0.002427
+  angular_velocity_rmse_rad_s: 0.022480

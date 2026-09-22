@@ -1,0 +1,27 @@
+# Task 3 configuration record
+color_threshold_hsv:
+  lower: [0, 45, 35]
+  upper: [40, 255, 255]
+morphology:
+  operation: open
+  kernel: 3
+hough_circles:
+  dp: 1.0
+  min_distance: 22
+  param1: 70
+  param2: 12
+  min_radius: 12
+  max_radius: 38
+model_fit:
+  common_radius_min_px: 55
+  common_radius_max_px: 135
+  min_inliers: 4
+  min_angle_bins: 3
+temporal_tracking:
+  short_loss_kept_identity: true
+  reselection_after_lost_frames: 60
+  association: "predicted center + geometry support"
+status_labels:
+  detected: detected
+  lost: lost
+  reselected: reselected
